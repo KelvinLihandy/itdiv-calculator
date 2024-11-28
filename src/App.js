@@ -1,10 +1,21 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Calculator from './Pages/Calculator';
+import Support from './Pages/Support'
+
+const buttonValues = [
+  ["C", "DEL", "?", "/"],
+  ["1", "2", "3", "x"],
+  ["4", "5", "6", "-"],
+  ["7", "8", "9", "+"],
+  ["0", "="],
+];
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -17,7 +28,9 @@ function App() {
         >
           Learn React
         </a>
-      </header>
+      </header> */}
+      <Calculator></Calculator>
+      <Support></Support>
     </div>
   );
 }
