@@ -6,7 +6,7 @@ import Support from './Pages/Support';
 
 
 
-function App() {
+const App = () => {
   return (
     <Router>
       <Routes>

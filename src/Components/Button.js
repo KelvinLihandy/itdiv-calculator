@@ -36,6 +36,7 @@ const Button = ({symbol}) => {
       return navigate('/support');
     }
   }
+  
   return (
     <button className={`button ${getColor(symbol)} ${getPlacement(symbol)}`} onClick={() => click(symbol)}>
         {symbol}

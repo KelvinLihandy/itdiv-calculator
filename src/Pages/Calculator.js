@@ -1,10 +1,10 @@
 import React from 'react'
-import Wrapper from '../Components/Wrapper';
+import WrapperCalc from '../Components/WrapperCalc';
 import History from '../Components/History';
 import ButtonContainer from '../Components/ButtonContainer';
 import Button from '../Components/Button';
 
-const buttonValues = [
+const buttonSymbols = [
     ["C", "DEL", "?", "/"],
     ["1", "2", "3", "x"],
     ["4", "5", "6", "-"],
@@ -14,17 +14,17 @@ const buttonValues = [
 
 const Calculator = () => {
     return (
-        <div className='canvas'>
-            <Wrapper>
+        <div className='calculator'>
+            <WrapperCalc>
                 <History>
 
                 </History>
                 <ButtonContainer>
-                    {buttonValues.flat().map(symbol => (
+                    {buttonSymbols.flat().map(symbol => (
                         <Button symbol={symbol}></Button>
                     ))}
                 </ButtonContainer>
-            </Wrapper>
+            </WrapperCalc>
         </div>
     )
 }
