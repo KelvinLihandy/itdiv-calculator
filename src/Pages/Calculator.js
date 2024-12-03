@@ -1,7 +1,10 @@
 import React from 'react'
 import WrapperCalc from '../Components/WrapperCalc';
+import CalcProvider from '../Contexts/CalcContext';
 import History from '../Components/History';
+import Sequence from '../Components/Sequence'
 import ButtonContainer from '../Components/ButtonContainer';
+import UpperContainer from '../Components/UpperContainer';
 import Button from '../Components/Button';
 
 const buttonSymbols = [
@@ -14,18 +17,21 @@ const buttonSymbols = [
 
 const Calculator = () => {
     return (
-        <div className='calculator'>
-            <WrapperCalc>
-                <History>
-
-                </History>
-                <ButtonContainer>
-                    {buttonSymbols.flat().map(symbol => (
+        <CalcProvider>
+            <div className='calculator'>
+                <WrapperCalc>
+                    <UpperContainer>
+                        <History />
+                        <Sequence />
+                    </UpperContainer>
+                    <ButtonContainer>
+                        {buttonSymbols.flat().map(symbol => (
                         <Button symbol={symbol}></Button>
-                    ))}
-                </ButtonContainer>
-            </WrapperCalc>
-        </div>
+                        ))}
+                    </ButtonContainer>
+                </WrapperCalc>
+            </div>
+        </CalcProvider>
     )
 }
 

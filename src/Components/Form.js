@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useContext} from 'react'
 
 const getType = (type) => {
   const types = {
@@ -17,7 +17,18 @@ const getForm = (type, prompt) => {
     field = <textarea type='text' className={`${getType(type)}`} placeholder={prompt}></textarea>;
   }
   else if(type === 'radio'){
-    field = <input type='radio' name='topic'></input>;
+    field = 
+    <div className='radio-container'>
+      <p>What can we help you today?</p>
+      <div className='radio-button'>
+        <input type='radio' name='topic' id='radio1' required></input>
+        <label for='radio1'>General</label>
+      </div>
+      <div className='radio-button'>
+        <input type='radio' name='topic' id='radio2' required></input>
+        <label for='radio2'>Bug</label>
+      </div>
+    </div>
   }
   return field;
 }
@@ -25,7 +36,7 @@ const getForm = (type, prompt) => {
 const Form = ({label, prompt, symbol, type}) => {
   return (
     <div className='form'>
-        {label !== '' ? <p>{label}<sup>{symbol}</sup></p> : <p>&nbsp;<sup>&nbsp;</sup></p>}
+        {label !== '' ? <p>{label}<sup className={symbol}>{symbol}</sup></p> : <p>&nbsp;<sup>&nbsp;</sup></p>}
         {getForm(type, prompt)}
     </div>
   )

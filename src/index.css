@@ -19,7 +19,7 @@
 }
 
 .support{
-  background-color: blue;
+  background-color: white;
   color: white;
 }
 
@@ -31,16 +31,38 @@
 
 .wrapper-supp{
   background-color: black;
-  height: 70vh;
+  height: 68vh;
   width: 57vw;
   padding: 20px;
   display: flex;
   flex-direction: column;
 }
 
-.history{
+.upper-container{
   background-color: #585657;
-  height:30%
+  height:30%;
+  display: flex;
+  /* flex-direction: column; */
+  color: white;
+  /* justify-content: space-between;   */
+}
+
+.history{
+  background-color: blue;
+  width: 28%;
+  height: 100%; 
+}
+
+.sequence{
+  background-color: gray;
+  text-align: end;
+  height: 40%;
+  width: 72%;
+  align-self: end;
+  align-content: center;
+  padding: 1px;
+  padding-right: 10px;
+  font-size: 2.2rem;
 }
 
 .button-container{
@@ -84,6 +106,9 @@
 .header-supp{
   font-size: 2rem;
   font-weight: 200;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .form-container{
@@ -91,7 +116,7 @@
   height: 100%;
   display: flex;
   flex-direction: row;
-  justify-items: flex-between;
+  justify-items: space-between;
   align-items: center;
   /* background-color: red; */
   padding-top: 10px;
@@ -111,8 +136,7 @@
 
 .form-long{
   width: 100%;
-  height: 270px;
-
+  height: 250px;
   /* background-color: red; */
 }
 
@@ -180,7 +204,36 @@
 }
 
 .form sup{
+  /* color: red; */
+}
+
+.\*{
   color: red;
+}
+
+.optional{
+  color: #787677;
+}
+
+.radio-container{
+  /* background-color: red; */
+  border: 1px dashed white;
+  padding: 12px;
+}
+
+.radio-container p{
+  font-size: 15px;
+}
+
+.radio-button{
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  gap: 5px;
+}
+
+.radio-button input{
+  width: 8px;
 }
 
 .ticket-container{

@@ -5,21 +5,21 @@ import FormContainer from '../Components/FormContainer'
 import LeftForm from '../Components/LeftForm'
 import RightForm from '../Components/RightForm'
 import SendSupport from '../Components/SendSupport'
+// import SuppProvider from '../Contexts/SupportContext'
 const Support = () => {
     return (
+        // <SuppProvider>
         <div className='support'>
-            <WrapperSupp>
-                <HeaderSupport />
-                <FormContainer>
-                    {/*combine this at a component that return different component*/}
-                    <LeftForm />
-                    <RightForm>
-{/* descr */}
-                    </RightForm>
-                </FormContainer>
-                <SendSupport />
-            </WrapperSupp>
-        </div>
+                <WrapperSupp>
+                    <HeaderSupport />
+                    <FormContainer>
+                        <LeftForm />
+                        <RightForm />
+                    </FormContainer>
+                    <SendSupport />
+                </WrapperSupp>
+            </div>
+        //</SuppProvider>
     )
 }
 

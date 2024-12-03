@@ -9,16 +9,16 @@ const Ticket = () => {
 
   return (
     <div className='support'>
-            <WrapperSupp>
-                <HeaderSupport />
-                <div className='ticket-container'>
-                  <div className='thanks'>
-                    Thank you for sending us your report, we will track the problem now
-                  </div>
-                  <TicketNumber number={id}/>
-                </div>
-            </WrapperSupp>
+      <WrapperSupp>
+        <HeaderSupport />
+        <div className='ticket-container'>
+          <div className='thanks'>
+            Thank you for sending us your report, we will track the problem now
+          </div>
+          <TicketNumber number={id}/>
         </div>
+      </WrapperSupp>
+    </div>
   )
 }
 
