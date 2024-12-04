@@ -24,7 +24,7 @@ const getPlacement = (symbol) => {
 
 const Button = ({symbol}) => {
   const navigate = useNavigate();
-  const {calc, setCalc} = useContext(CalcContext)
+  const {calc, setCalc, history, setHistory} = useContext(CalcContext)
 
   const symbols = ['/', 'x', '+', '-'];
 
@@ -36,13 +36,26 @@ const Button = ({symbol}) => {
     setCalc({seq: '0', count: 1, sym: '', prevSym: 0});
   }
 
-  const del = () => {
-    console.log("dias");
-  }
-
   const res = () => {
-    if(calc.count < 3) return;
-    console.log("res");
+    if(calc.count < 3 || calc.seq === 'Err') return;
+    let transformed = calc.seq;
+    if(calc.sym === 'x'){
+      transformed = calc.seq.replace('x', '*');
+    }
+    if(calc.sym === '/' && calc.seq.charAt(calc.seq.indexOf('/') + 1) === '0'){
+      setCalc({
+        seq: 'Err',
+      })
+      return;
+    }
+    const calculation = eval(transformed);
+    setCalc({
+      seq: calculation.toString(),
+      count: 1,
+      sym: '',
+      prevSym: 0
+    })
+    setHistory([...history, calculation]);
   }
 
   const ops = () => {
@@ -57,7 +70,23 @@ const Button = ({symbol}) => {
     }) 
   }
 
+  const del = () => {
+    if(calc.seq === 'Err') return;
+    if(calc.seq.length > 1){
+      setCalc({seq: calc.seq.slice(0, -1)})
+    }
+    else setCalc({seq: '0'})
+    setCalc({
+      ...calc,
+      seq: calc.seq.length > 1 ? calc.seq.slice(0, -1) : '0',
+      count: symbols.some(sys => calc.seq.slice(-2, -1).includes(sys)) ? 2 : (calc.sym !== '' ? calc.count : 1),
+      sym: calc.count === 2 ? '' : calc.sym,
+      prevSym: calc.sym === '' ? 0 : 1
+    })
+  }
+
   const num = () => {
+    if(calc.seq === 'Err') return;
     setCalc({
       ...calc,
       seq: calc.seq === '0' ? symbol : calc.seq + symbol,

@@ -9,8 +9,10 @@ const CalcProvider = ({children}) => {
         prevSym: 0
     });
 
+    const [history, setHistory] = useState(['']);
+
     return (
-        <CalcContext.Provider value={{calc, setCalc}}>
+        <CalcContext.Provider value={{calc, setCalc, history, setHistory}}>
             {children}
         </CalcContext.Provider>
     )
