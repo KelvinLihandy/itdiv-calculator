@@ -159,13 +159,24 @@
 }
 
 .send-supp button{
-  background-color: #ff9f0a;
+  /* background-color: #ff9f0a;
+  color: white; */
   border: 1px;
   height: 2.5rem;
   width: 7rem;
   font-size: 1.5rem;
-  color: white;
+  
   border-radius: 1.5rem;
+}
+
+.send-supp button:enabled{
+  background-color: #ff9f0a;
+  color: white;
+}
+
+.send-supp button:disabled{
+  background-color: #a5a5a5;
+  color: black;
 }
 
 .left-form{

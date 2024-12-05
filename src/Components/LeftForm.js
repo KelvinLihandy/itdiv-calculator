@@ -1,9 +1,9 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import Form from './Form'
-// import { SuppContext } from '../Contexts/SupportContext'
+import { SuppContext } from '../Contexts/SupportContext'
 
 const LeftForm = () => {
-  // const {req, setReq} = useContext(SuppContext);
+  const {inputValue, buttonState} = useContext(SuppContext);
   
   return (
     <div className='left-form'>
@@ -12,7 +12,8 @@ const LeftForm = () => {
                 <Form label={''} prompt={'Last'} type={'short'}/>
         </div>
         <Form label={'Email '} prompt={'Email'} symbol={'*'} type={'short'}/>
-        <Form label={'Topic '} symbol={'*'} type={'radio'}/>
+        <Form label={'Topic '} prompt={'Topic'} symbol={'*'} type={'radio'}/>
+        {/* <p>{inputValue.First.length}{inputValue.Last.length}{inputValue.Email.length}{inputValue.Topic.length}{buttonState.disabled}</p> */}
     </div>
   )
 }

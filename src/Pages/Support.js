@@ -5,10 +5,13 @@ import FormContainer from '../Components/FormContainer'
 import LeftForm from '../Components/LeftForm'
 import RightForm from '../Components/RightForm'
 import SendSupport from '../Components/SendSupport'
-// import SuppProvider from '../Contexts/SupportContext'
+import SuppProvider from '../Contexts/SupportContext'
+
 const Support = () => {
+    // const {inputValue} = useContext(SuppContext);
+
     return (
-        // <SuppProvider>
+        <SuppProvider>
         <div className='support'>
                 <WrapperSupp>
                     <HeaderSupport />
@@ -19,7 +22,7 @@ const Support = () => {
                     <SendSupport />
                 </WrapperSupp>
             </div>
-        //</SuppProvider>
+        </SuppProvider>
     )
 }
 
